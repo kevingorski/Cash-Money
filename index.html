@@ -1,0 +1,276 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- HTML5 Boilerplate 2.0 -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Bootstrap 1.4.0 -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+
+	<ul class="tabs" data-tabs="tabs">
+		<li class="active"><a href="#Welcome">Welcome!</a></li>
+		<li><a href="#Accounts">Accounts</a></li>
+		<li><a href="#Assets">Assets</a></li>
+		<li><a href="#Liabilities">Liabilities</a></li>
+		<li><a href="#CashFlow">Cash Flow</a></li>
+		<li><a href="#Projections">Projections</a></li>
+	</ul>
+	
+	<div id="my-tab-tabs" class="tab-content">
+		<div id="Welcome" class="tab-pane active">
+			<form class="form-stacked">
+				<fieldset>
+					<legend>Welcome!</legend>
+					<div class="clearfix">
+						<label for="DisplayName">What should we call you?</label>
+						<div class="input">
+							<input id="DisplayName" name="DisplayName" class="span4" size="30" type="text" required autofocus>
+							<span class="help-block">No need to be formal.</span>
+						</div>
+					</div>
+			
+				</fieldset>
+				<div class="actions">
+					<input type="submit" class="btn primary" value="OK let's GO">
+					<input type="reset" class="btn" value="Start Over">
+				</div>
+			</form>
+		</div>
+	
+		<div id="Accounts" class="tab-pane">
+			<div id="AccountsList"></div>
+			<form class="form-stacked">
+				<fieldset>
+					<legend>Account</legend>
+					<p>
+						Some intro text, probably re-assuring the user about how we don't need all the details, so just try these.
+					</p>
+					<input id="AccountId" name="AccountId" type="hidden">
+					<div class="clearfix">
+						<label for="AccountName">Account Name</label>
+						<div class="input">
+							<input id="AccountName" name="AccountName" class="span4" size="30" type="text" required>
+							<span class="help-block">Something like "Checking", "Savings", "Retirement".</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="AccountBalance">Current Balance</label>
+						<div class="input-prepend">
+							<span class="add-on">$</span>
+							<input id="AccountBalance" name="AccountBalance" class="span2" size="8" maxlength="6" type="text" required pattern="^\d+(?:,\d{3})*$">
+							<span class="help-block">Doesn't have to be exact (you can leave off the cents).</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="AccountNotes">Notes</label>
+						<div class="input">
+							<textarea id="AccountNotes" class="span8" rows="3"></textarea>
+							<span class="help-block">Anything else you'd like to note.</span>
+						</div>
+					</div>
+				</fieldset>
+				<div class="actions">
+					<input type="submit" class="btn primary" value="All Good">
+					<input type="reset" class="btn" value="Nevermind">
+				</div>
+			</form>
+		</div>
+		
+		<div id="Assets" class="tab-pane">
+			<div id="AssetsList"></div>
+			<form class="form-stacked">
+				<fieldset>
+					<legend>Assets</legend>
+					<p>
+						Some intro text, probably re-assuring the user about how we don't need all the details, so just try these.
+					</p>
+					<input id="AssetId" name="AssetId" type="hidden">
+					<div class="clearfix">
+						<label for="AssetName">Asset Name</label>
+						<div class="input">
+							<input id="AssetName" name="AssetName" class="span4" size="30" type="text" required>
+							<span class="help-block">Something like "Car" or "House."</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="AssetValue">Current Value</label>
+						<div class="input-prepend">
+							<span class="add-on">$</span>
+							<input id="AssetValue" name="AssetValue" class="span2" size="8" maxlength="6" type="text" required pattern="^\d+(?:,\d{3})*$">
+							<span class="help-block">Doesn't have to be exact (you can leave off the cents).</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="AssetNotes">Notes</label>
+						<div class="input">
+							<textarea id="AssetNotes" class="span8" rows="3"></textarea>
+							<span class="help-block">Anything else you'd like to note.</span>
+						</div>
+					</div>
+				</fieldset>
+				<div class="actions">
+					<input type="submit" class="btn primary" value="All Good">
+					<input type="reset" class="btn" value="Nevermind">
+				</div>
+			</form>
+		</div>
+		
+		<div id="Liabilities" class="tab-pane">
+			<div id="LiabilitiesList"></div>
+			<form class="form-stacked">
+				<fieldset>
+					<legend>Liabilities</legend>
+					<p>
+						Some intro text, probably re-assuring the user about how we don't need all the details, so just try these.
+					</p>
+					<input id="LiabilityId" name="LiabilityId" type="hidden">
+					<div class="clearfix">
+						<label for="LiabilityName">Liability Name</label>
+						<div class="input">
+							<input id="LiabilityName" name="LiabilityName" class="span4" size="30" type="text" required>
+							<span class="help-block">Something like "Loan" or "Mortgage."</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="LiabilityValue">Current Value</label>
+						<div class="input-prepend">
+							<span class="add-on">$</span>
+							<input id="LiabilityValue" name="LiabilityValue" class="span2" size="8" maxlength="6" type="text" required pattern="^\d+(?:,\d{3})*$">
+							<span class="help-block">Doesn't have to be exact (you can leave off the cents).</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="LiabilityNotes">Notes</label>
+						<div class="input">
+							<textarea id="LiabilityNotes" class="span8" rows="3"></textarea>
+							<span class="help-block">Anything else you'd like to note.</span>
+						</div>
+					</div>
+				</fieldset>
+				<div class="actions">
+					<input type="submit" class="btn primary" value="All Good">
+					<input type="reset" class="btn" value="Nevermind">
+				</div>
+			</form>
+		</div>
+		
+		<div id="CashFlow" class="tab-pane">
+			<div id="CashFlowList"></div>
+			<form class="form-stacked">
+				<fieldset>
+					<legend>Cash Flow</legend>
+					<p>Income like paychecks, interest, etc and expenses like groceries, gas, car payments.</p>
+					<input id="CashFlowId" name="CashFlowId" type="hidden">
+					<div class="clearfix">
+						<label for="CashFlowName">Cash Flow Name</label>
+						<div class="input">
+							<input id="CashFlowName" name="CashFlowName" class="span4" size="30" type="text" required>
+							<span class="help-block">Paycheck, groceries</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="CashFlowAmount">Amount</label>
+						<div class="input-prepend">
+							<span class="add-on">$</span>
+							<input id="CashFlowAmount" name="CashFlowAmount" class="span2" size="8" maxlength="6" type="text" required pattern="^\d+(?:,\d{3})*$">
+							<span class="help-block">Doesn't have to be exact, and should be positive.</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="CashFlowPeriod">Period <span class="label notice">Re-name</span></label>
+						<div class="input">
+							<select id="CashFlowPeriod" name="CashFlowPeriod">
+								<option>Weekly</option>
+								<option>Twice a month</option>
+								<option>Monthly</option>
+								<option>Yearly</option>
+							</select>
+							<span class="help-block">How often should this happen?</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="CashFlowFromAccount">Withdraw From Account</label>
+						<div class="input">
+							<select id="CashFlowFromAccount" name="CashFlowFromAccount">
+								<option value="">(None)</option>
+							</select>
+							<span class="help-block">If this amount comes from one of your accounts, this is it.</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="CashFlowToAccount">Deposit Into Account</label>
+						<div class="input">
+							<select id="CashFlowToAccount" name="CashFlowToAccount">
+								<option value="">(None)</option>
+							</select>
+							<span class="help-block">If this amount is deposited into one of your accounts, this is it.</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="CashFlowToLiability">Pay Into Liability</label>
+						<div class="input">
+							<select id="CashFlowToLiability" name="CashFlowToLiability">
+								<option value="">(None)</option>
+							</select>
+							<span class="help-block">If this amount is reducing a debt, this is it.</span>
+						</div>
+					</div>
+					<div class="clearfix">
+						<label for="CashFlowAsset">Related Asset <span class="label notice">Re-name</span></label>
+						<div class="input">
+							<select id="CashFlowAsset" name="CashFlowAsset">
+								<option value="">(None)</option>
+							</select>
+							<span class="help-block">If this is a car loan payment, this would be the car.</span>
+						</div>
+					</div>
+				</fieldset>
+				<div class="actions">
+					<input type="submit" class="btn primary" value="All Good">
+					<input type="reset" class="btn" value="Nevermind">
+				</div>
+			</form>
+		</div>
+		
+		<div id="Projections" class="tab-pane">
+			<h2>Projections</h2>
+			<div id="ProjectionList">
+				Calculating future transactions...
+			</div>
+		</div>
+	</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!-- scripts concatenated and minified via ant build script-->
+<script src="js/plugins.js"></script>
+<script src="js/libs/moment.min.js"></script>
+<script src="js/libs/tim-lite.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/libs/bootstrap-tabs.js"></script>
+<!-- end scripts-->
+
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+</body>
+</html>
